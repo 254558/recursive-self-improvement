@@ -560,18 +560,19 @@ canvas {
   width: 40%;
 }
 .headline h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 0 0 0.5rem 0;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Lora', serif;
   letter-spacing: -0.02em;
+  line-height: 1.0; /* 数值越小行间距越小，按需调整 1.0~1.3 */
 }
 .headline p {
   font-size: 1.1rem;
-  margin: 0;
+  margin: 0.9rem 0 0 0; /* 增加上方间距，可改 0.2rem/0.4rem 微调 */
   opacity: 0.6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 300; /* 调细 */
+  font-weight: 300;
 }
 @media (max-width: 991px) {
   .headline {
