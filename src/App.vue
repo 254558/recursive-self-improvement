@@ -416,7 +416,8 @@ class SparkCellularAnimation {
         newAgents.push(agent)
       }
       this.agents = newAgents
-      const available = this.getAvailableCells()
+      const occupiedByAgents = new Set(this.agents.filter(a => !a.dieAt).map(a => a.idx))
+      const available = this.getAvailableCells().filter(c => !occupiedByAgents.has(c))
       const aliveCount = this.agents.filter(a => !a.dieAt).length
       if (!available.length && !aliveCount) { this.doneAt = tickTime; break }
       const target = Math.min(48, Math.max(1, Math.floor((this.ticks / (7 / (1 + 0.25 * this.phase))) ** 2)))
