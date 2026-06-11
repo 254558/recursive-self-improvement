@@ -529,6 +529,22 @@ onUnmounted(() => {
   }
 });
 </script>
+
+<style>
+/* 全局：隐藏页面滚动条 + 禁止滚动 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+</style>
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 .spark-animation-container {
@@ -565,11 +581,11 @@ canvas {
   font-weight: 500;
   font-family: 'Lora', serif;
   letter-spacing: -0.02em;
-  line-height: 1.0; /* 数值越小行间距越小，按需调整 1.0~1.3 */
+  line-height: 1.0;
 }
 .headline p {
   font-size: 1.1rem;
-  margin: 0.9rem 0 0 0; /* 增加上方间距，可改 0.2rem/0.4rem 微调 */
+  margin: 0.9rem 0 0 0;
   opacity: 0.6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 300;
