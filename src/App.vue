@@ -329,10 +329,9 @@ class SparkCellularAnimation {
     this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0)
     this.ctx.imageSmoothingEnabled = true
     this.ctx.imageSmoothingQuality = "high"
-    const isDesktop = this.width >= 992
-    this.centerX = isDesktop ? 0.66 * this.width : 0.5 * this.width
-    this.centerY = isDesktop ? 0.5 * this.height : 0.62 * this.height
-    this.maxScale = isDesktop ? 0.58 * Math.min(0.6 * this.width, this.height) : 0.5 * Math.min(0.92 * this.width, 0.62 * this.height)
+    this.centerX = 0.66 * this.width
+    this.centerY = 0.5 * this.height
+    this.maxScale = 0.58 * Math.min(0.6 * this.width, this.height)
   }
 
   setupIntersectionObserver() {
@@ -634,16 +633,5 @@ canvas {
   opacity: 0.6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 300;
-}
-@media (max-width: 991px) {
-  .headline {
-    left: 50%;
-    top: 80%;
-    transform: translate(-50%, -100%);
-    text-align: center;
-    width: 90%;
-  }
-  .headline h1 { font-size: 2rem; }
-  .headline p { font-size: 1rem; }
 }
 </style>
